@@ -1,0 +1,24 @@
+abstract EDGE
+ xor Interface
+  xor Mobile
+   G3
+   G4
+   G5
+   G5p
+  xor Wifi
+   GHz_24
+   GHz_5
+  EthernetMbps -> integer
+  [EthernetMbps => (EthernetMbps = 10 || EthernetMbps = 100 || EthernetMbps = 1000)]
+ xor Antenna ?
+  Small
+  Medium
+  Large
+ xor VNFs
+  Monitor
+  Firewall
+  Encryption 
+RES : EDGE
+//Cross-tree constraints
+[(Mobile || Wifi) => Antenna]
+[EthernetMbps => not Antenna]

@@ -1,0 +1,15 @@
+abstract Pizza
+ or Topping
+   Salami
+   Ham
+   Mozzarella
+ xor Size
+   Normal
+   Big
+ xor Dough
+   Neapolitan
+   Sicilian
+ xor CheesyCrust ?  
+RES : Pizza
+//Cross-tree constraints
+[CheesyCrust => Big]
