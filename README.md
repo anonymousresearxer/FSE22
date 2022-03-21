@@ -14,6 +14,7 @@ This data-set contains:
 2. The 3 categorical QVMs in Clafer.
 3. The 3 categorical QVMs in AAFM Python Framework.
 4. A Microsoft Excel file with the scalability results obtained.
+5. A file with EDGE SPL time (seconds) and energy (watts) QAs measurements.
 
 
 ## Automated Reasoners
