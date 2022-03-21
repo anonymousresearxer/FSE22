@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+File name: EDGE.xml
+(Copyright) Author: anonymousresearxer
+Date created: 17/03/2022
+Version: AAFM Python Framwork 3/2022 + Python 3.9.8
+Description: Generic edge system SPL modelled in XML
+-->
+<featureModel>
+	<properties>
+		<graphics key="autolayoutconstraints" value="false"/>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="EDGE">
+			<alt mandatory="true" name="Interface">
+				<alt name="Ethernet_Mbps">
+					<feature name="Ethernet_Mbps10"/>
+					<feature name="Ethernet_Mbps100"/>
+					<feature name="Ethernet_Mbps1000"/>
+				</alt>
+				<alt name="Wireless">
+					<alt name="Mobile">
+						<feature name="G3"/>
+						<feature name="G4"/>
+						<feature name="G5"/>
+						<feature name="G5p"/>
+					</alt>
+					<alt name="Wifi">
+						<feature name="GHz_24"/>
+						<feature name="GHz_5"/>
+					</alt>
+				</alt>
+			</alt>
+			<alt name="Antenna">
+				<feature name="Small"/>
+				<feature name="Medium"/>
+				<feature name="Large"/>
+			</alt>
+			<alt mandatory="true" name="VNFs">
+				<feature name="Monitor"/>
+				<feature name="Firewall"/>
+				<feature name="Encryption"/>
+			</alt>
+		</and>
+	</struct>
+	<constraints>
+		<rule>
+			<imp>
+				<var>Wireless</var>
+				<var>Antenna</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>Ethernet_Mbps</var>
+				<not>
+					<var>Antenna</var>
+				</not>
+			</imp>
+		</rule>
+	</constraints>
+</featureModel>

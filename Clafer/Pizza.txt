@@ -1,0 +1,21 @@
+// File name: Pizza.txt
+// (Copyright) Author: anonymousresearxer
+// Date created: 17/03/2022
+// Version: Clafer tools 0.45 + Java JDK 17.0.2
+// Description: Italian vendor machine SPL modelled in Clafer Language
+
+abstract Pizza
+ or Topping
+   Salami
+   Ham
+   Mozzarella
+ xor Size
+   Normal
+   Big
+ xor Dough
+   Neapolitan
+   Sicilian
+ xor CheesyCrust ?  
+RES : Pizza
+//Cross-tree constraints
+[CheesyCrust => Big]
